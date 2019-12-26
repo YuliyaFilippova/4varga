@@ -11,3 +11,4 @@ Usage:
 ]
 2. Result for each varga is displayed in console. 
 3. Kunda Method is the 81th multiplication 
+4. Appropriate value should be in trin from Janma Nakshatra
