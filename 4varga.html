@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>4 varga</title>
+</head>
+<body>
+
+    <h1>
+        Varga Chatushtaya Method BirthTime rectification
+    </h1>
+    
+    <script>
+
+    let arr = [
+        [82, 58], 
+        [83, 10], 
+        [83, 21], 
+        [83, 33], 
+        [83, 44], 
+        [83, 55], 
+        [84, 07], 
+        [84, 18], 
+    ];
+
+    let gr, min; 
+    let arg = [9, 12, 81, 108];
+
+    function multy(){
+        arg.forEach( varg => {
+            console.log(`varg = ${varg}`);
+            arr.forEach(function(el, i){
+                gr = varg*el[0];
+                min = varg*el[1] + gr*60;
+                min = min%21600;
+                //console.log(min);
+                gr = Math.trunc(min/60);
+                min = min%60;
+                if (gr >= 360) gr = gr%360;
+                console.log(`${i+1} [${el}]: gr = ${gr}, min = ${min}`);
+            });
+        });
+    }
+
+    multy();
+
+    function kunda() {
+        arr.forEach(function(el, i){
+            gr = arg[2]*el[0];
+            min = arg[2]*el[1];
+            gr += Math.trunc(min/60);
+            min = min%60;
+            if (gr >= 360) gr = gr%360;
+            console.log(`  ${i+1} [${el}]: gr = ${gr}, min = ${min}`);
+        });
+    }
+    console.log(`Kunda \n`);
+    
+    kunda();
+    
+
+    </script>
+</body>
+</html>
